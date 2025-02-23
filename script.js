@@ -1,10 +1,13 @@
 //your JS code here. If required.
 
-function updateTimer() {
-	let timer = document.getElementById("timer");
-	let date = new Date();
-	timer.innerText = date.toLocaleString();
-}
+document.addEventListener("DOMContentLoaded", () => {
+    function updateTimer() {
+        let timer = document.getElementById("timer");
+        if (timer) {
+            timer.innerText = new Date().toLocaleString();
+        }
+    }
 
-setInterval(updateTimer, 1000);
-updateTimer();
+    setInterval(updateTimer, 1000);
+    updateTimer(); // Run once immediately after loading
+});
